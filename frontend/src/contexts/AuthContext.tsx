@@ -91,10 +91,13 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   };
 
-  const register = async (userData: RegisterData): Promise<{ success: boolean; error?: string }> => {
-    try {
-      setIsLoading(true);
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/register`, {
+  const register = async (userData: RegisterData) => {
+  try {
+    setIsLoading(true);
+
+    console.log("BACKEND URL:", import.meta.env.VITE_BACKEND_URL); // 👈 ADD THIS
+
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

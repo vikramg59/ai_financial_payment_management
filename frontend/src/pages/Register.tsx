@@ -27,13 +27,14 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
+  e.preventDefault();
+  console.log("FORM SUBMITTED"); // 👈 ADD THIS
+  setError("");
 
-    if (formData.password !== formData.confirmPassword) {
-      setError("Passwords do not match");
-      return;
-    }
+  if (formData.password !== formData.confirmPassword) {
+    setError("Passwords do not match");
+    return;
+  }
 
     if (formData.password.length < 6) {
       setError("Password must be at least 6 characters long");
