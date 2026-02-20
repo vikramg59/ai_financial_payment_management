@@ -29,6 +29,8 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
               <div>
                 <h1 className="text-xl font-semibold">Financial Management Platform</h1>
                 <p className="text-sm text-muted-foreground">
+
+                  
                   Welcome back, {user ? `${user.firstName} ${user.lastName}` : 'User'}
                 </p>
               </div>
