@@ -169,8 +169,9 @@ app.post('/api/auth/register', async (req, res) => {
       }
     });
   } catch (error) {
-    res.status(500).json({ error: 'Server error' });
-  }
+  console.error("REGISTER ERROR:", error); // ⭐ MUST ADD
+  res.status(500).json({ error: error.message });
+}
 });
 
 // Login route
