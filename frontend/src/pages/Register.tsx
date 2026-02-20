@@ -28,7 +28,7 @@ const Register = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
-  console.log("FORM SUBMITTED"); // 👈 ADD THIS
+  console.log("SUBMIT HIT"); // ⭐ ADD THIS
   setError("");
 
   if (formData.password !== formData.confirmPassword) {
