@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 from langchain_google_genai.chat_models import ChatGoogleGenerativeAI #@UnresolvedImport
 from langchain_google_genai.embeddings import GoogleGenerativeAIEmbeddings #@UnresolvedImport
 from langchain_community.vectorstores import FAISS #@UnresolvedImport
-from langchain.text_splitter import RecursiveCharacterTextSplitter #@UnresolvedImport
+from langchain_text_splitters import RecursiveCharacterTextSplitter #@UnresolvedImport
 from langchain.chains import RetrievalQA #@UnresolvedImport
 from langchain.prompts import PromptTemplate #@UnresolvedImport
 
