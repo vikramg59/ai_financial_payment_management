@@ -1,21 +1,26 @@
 require('dotenv').config();
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 const multer = require('multer');
+
 const app = express();
 const PORT = process.env.PORT || 5001;
 const PythonRAGClient = require('./pythonRAGClient');
 
-// Middleware
+// ✅ CRITICAL MIDDLEWARE ORDER
+app.use(express.json()); // ⭐ FIXED (was bodyParser)
 app.use(cors({
   origin: process.env.CORS_ORIGIN,
   credentials: true
 }));
-app.use(bodyParser.json());
+
+// ✅ Health check
+app.get('/', (req, res) => {
+  res.send('Backend running');
+});
 
 // MongoDB Connection
 mongoose.connect(process.env.DATABASE_URL, {
